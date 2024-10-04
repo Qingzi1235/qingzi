@@ -1,0 +1,97 @@
+<!doctype html>
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>光遇-光是遇见就很美好</title> 
+        <style>
+         body { 
+             margin: auto;
+             background-size: cover;
+             background-image: url(./tp/SKY_20240928_002151_.jpg)
+         }
+         	
+         .all{
+                 display:
+             }
+             
+         .playbutton {
+             width: 40px;
+             height: 40px;
+         }
+         
+         .video-container {
+             position: relative;
+             width: 350px;
+             height: 200px;
+             margin: 20px auto;
+             display: none; /* 默认隐藏视频容器 */
+         }
+         
+         .Navigationbar {
+             display: flex;
+             height: 55px;
+             background-color: #1A0089
+         }
+         
+        </style> 
+    </head> 
+    <body > 
+    <div class="all">
+     <div class="Navigationbar">
+       
+       <a href="https://sky.163.com/m/index.html">
+       
+       <img src="tp/128.jpg" style="height: 47px; margin-top: 4px; margin-left: 10px;"/>
+       </a>
+       <span style="margin-left: 10px; margin-top: 14px; font-weight: 700;line-height: 0.5; font-size:15px; color: #fff">光·遇
+        <p style="font-size:10px;font-weight: 400;">
+        光是遇见 就很美好
+        </p>
+       </span>
+       <a href="https://sky.163.com/m/index.html" style="color: #A2E9FF; text-decoration: none; margin: auto; margin-right: 10px">进入官网</a>
+     </div>
+    
+      <button type="button" class="playbutton">视频</button> 
+       <div class="video-container">
+         <button style="margin-right: 20px; " id="stop">关闭</button>
+         <video id="myVideo" src="sp/光遇.mp4" width="350px" controls></video>
+         <audio id="myAudio" src="yp/双笙 - 大鱼.mp3"></audio>
+       </div>
+       <audio src="yp/双笙 - 大鱼.mp3" class="dayu"></audio>
+       <button style="position: absolute; top: 80px; right:10px;" class="music">🔇</button>
+        <a href="钢琴.html">破弹琴</a>
+    </div>
+      <script>
+         const playbutton = document.querySelector('.playbutton');
+         const video = document.getElementById('myVideo');
+         const videoContainer = document.querySelector('.video-container')
+         const stop = document.getElementById('stop')
+         const dayu = document.querySelector('.dayu')
+         const musicbutton = document.querySelector('.music')
+         
+            playbutton.addEventListener('click', () => {
+                videoContainer.style.display = 'block'
+                video.play();
+                dayu.play();
+            });
+            
+            musicbutton.addEventListener('click',()=>{
+               if(dayu.paused) {
+               	dayu.play();
+                   musicbutton.textContent ='🎵';
+               }
+               else {
+               	dayu.pause();
+                   musicbutton.textContent = '🔇';
+               }
+           });
+            
+            stop.addEventListener('click', () => {
+                videoContainer.style.display = 'none';
+                video.pause();
+           });
+          
+     </script>  
+    </body>
+</html>
